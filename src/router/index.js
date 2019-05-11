@@ -6,6 +6,7 @@ import My from '@/components/my/Index'
 import CommodityDetail from '@/components/commons/CommodityDetail'
 import Coffers from '@/components/my/coffers/Index'
 import Team from '@/components/my/team/Index'
+import TeamShare from '@/components/my/team/Share'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/team',
       name: 'Team',
       component: Team
+    },
+    {
+      path: '/team-share',
+      name: 'TeamShare',
+      component: TeamShare
     }
   ]
 })
