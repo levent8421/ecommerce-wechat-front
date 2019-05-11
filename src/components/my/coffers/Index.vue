@@ -6,7 +6,7 @@
           <p class="title-text">总资产</p>
           <p class="total-money">{{total | toYuan}}</p>
         </div>
-        <el-button class="btn-withdrawal">申请提现</el-button>
+        <el-button class="btn-withdrawal" @click="toWithdrawal">申请提现</el-button>
       </div>
       <p class="bottom">
         <span>可提现：{{canWithdrawal | toYuan}}</span>
@@ -82,6 +82,13 @@ export default {
           returnMoney: '7.00'
         }
       ]
+    }
+  },
+  methods: {
+    toWithdrawal () {
+      this.$router.push({
+        name: 'Withdrawal'
+      })
     }
   }
 }

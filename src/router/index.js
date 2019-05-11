@@ -7,6 +7,7 @@ import CommodityDetail from '@/components/commons/CommodityDetail'
 import Coffers from '@/components/my/coffers/Index'
 import Team from '@/components/my/team/Index'
 import TeamShare from '@/components/my/team/Share'
+import Withdrawal from '@/components/my/coffers/Withdrawal'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/team-share',
       name: 'TeamShare',
       component: TeamShare
+    },
+    {
+      path: '/withdrawal',
+      name: 'Withdrawal',
+      component: Withdrawal
     }
   ]
 })
