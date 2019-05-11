@@ -1,0 +1,45 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import Local from '@/components/local/Index'
+import Near from '@/components/near/Index'
+import My from '@/components/my/Index'
+import CommodityDetail from '@/components/commons/CommodityDetail'
+import Coffers from '@/components/my/coffers/Index'
+import Team from '@/components/my/team/Index'
+
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Local',
+      component: Local
+    },
+    {
+      path: '/near',
+      name: 'Near',
+      component: Near
+    },
+    {
+      path: '/my',
+      name: 'My',
+      component: My
+    },
+    {
+      path: '/commodity/:id',
+      name: 'CommodityDetail',
+      component: CommodityDetail
+    },
+    {
+      path: '/coffers',
+      name: 'Coffers',
+      component: Coffers
+    },
+    {
+      path: '/team',
+      name: 'Team',
+      component: Team
+    }
+  ]
+})
