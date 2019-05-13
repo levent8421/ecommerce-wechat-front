@@ -1,25 +1,18 @@
 <template>
   <div id="app">
-    <app-header :displayTitle="title"/>
+    <app-header/>
     <index class="content"/>
-    <tab-bar :menus="menus" @menuClick="handleMenuClick"/>
+    <tab-bar @menuClick="handleMenuClick"/>
   </div>
 </template>
 
 <script>
 import AppHeader from './components/Header'
 import TabBar from './components/TabBar'
-import tabBar from './model/tabBar'
 import Index from './components/Index'
 
 export default {
   name: 'App',
-  data () {
-    return {
-      menus: tabBar.menus,
-      title: '本地'
-    }
-  },
   components: {
     Index,
     AppHeader,
@@ -27,8 +20,7 @@ export default {
   },
   methods: {
     handleMenuClick (menu) {
-      this.$router.push({name: menu.name})
-      this.title = menu.text
+      this.$store.dispatch('routeTo', {menu, router: this.$router})
     }
   }
 }

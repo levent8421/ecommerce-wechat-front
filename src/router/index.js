@@ -8,6 +8,7 @@ import Coffers from '@/components/my/coffers/Index'
 import Team from '@/components/my/team/Index'
 import TeamShare from '@/components/my/team/Share'
 import Withdrawal from '@/components/my/coffers/Withdrawal'
+import Buy from '@/components/commons/Buy'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/withdrawal',
       name: 'Withdrawal',
       component: Withdrawal
+    },
+    {
+      path: '/buy',
+      name: 'Buy',
+      component: Buy
     }
   ]
 })

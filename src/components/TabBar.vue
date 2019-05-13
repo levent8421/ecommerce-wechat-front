@@ -2,7 +2,8 @@
   <div class="tab-bar-wrapper">
     <div class="stub"></div>
     <div class="tab-bar">
-      <button :key="menu.text" v-for="menu in menus" @click="handleMenuClick(menu)" :class="menu.active?'active':''">
+      <button :key="menu.text" v-for="menu in menus" @click="handleMenuClick(menu)"
+              :class="menu.active?'active':''">
         <span class="icon" :class="menu.active?'active':''"></span>
         <span>{{menu.text}}</span>
       </button>
@@ -13,13 +14,19 @@
 <script>
 export default {
   name: 'TabBar',
-  props: ['menus'],
+  mounted () {
+    const route = this.$route
+    this.$store.state.menu.list.forEach(m => {
+      m.active = m.name === route.name
+    })
+  },
+  data () {
+    return {
+      menus: this.$store.state.menu.list
+    }
+  },
   methods: {
     handleMenuClick (menu) {
-      this.menus.forEach(v => {
-        v.active = false
-      })
-      menu.active = true
       this.$emit('menuClick', menu)
     }
   }

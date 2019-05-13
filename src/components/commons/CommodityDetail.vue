@@ -45,7 +45,7 @@
         <i class="el-icon-service"></i>
         <span>客服</span>
       </button>
-      <button class="btn-buy">立即购买</button>
+      <button class="btn-buy" @click="handleBuy">立即购买</button>
     </div>
     <commodity-share-dialog :returnMoney="commodity.returnMoney" :show="showShare" :code="shareCode"
                             @share="handleShare"/>
@@ -86,8 +86,12 @@ export default {
   name: 'CommodityDetail',
   methods: {
     handleShare (code) {
-      console.log('share', code)
       alert('share' + code)
+    },
+    handleBuy () {
+      const id = this.$route.params.id
+      this.$router.push({name: 'Buy', params: {id}})
+      this.$store.dispatch('setTitle', '购买')
     }
   }
 }

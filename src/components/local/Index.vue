@@ -52,6 +52,7 @@ export default {
   methods: {
     handleCardClick (c) {
       this.$router.push({name: 'CommodityDetail', params: {id: c.id}})
+      this.$store.dispatch('setTitle', '商品详情')
     }
   }
 }
