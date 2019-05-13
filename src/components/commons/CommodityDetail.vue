@@ -65,10 +65,10 @@ export default {
   data () {
     return {
       carousels: [
-        'http://pic9.nipic.com/20100812/4922457_105743986611_2.jpg',
-        'http://pic34.nipic.com/20131104/13264764_101028322111_2.jpg',
-        'http://pic25.nipic.com/20121105/11022859_100308308159_2.jpg',
-        'http://pic39.nipic.com/20140320/12795880_110914420143_2.jpg'
+        'http://img.lanrentuku.com/img/allimg/1707/14988864745279.jpg',
+        'http://img.lanrentuku.com/img/allimg/1709/1506069090817.jpg',
+        'http://py.66wz.com/pic/003/005/918/00300591864_99c2d0c6.jpg',
+        'http://py.66wz.com/pic/003/005/910/00300591038_61dbd7a8.jpg'
       ],
       commodity: {
         name: '火龙果',

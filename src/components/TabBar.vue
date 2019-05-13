@@ -41,6 +41,7 @@ export default {
   }
 
   .tab-bar {
+    z-index: 999999;
     border-top: 1px solid #DDDDDD;
     position: fixed;
     bottom: 0;

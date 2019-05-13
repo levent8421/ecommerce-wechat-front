@@ -77,6 +77,7 @@ export default {
 <style scoped lang="less">
   .buy {
     overflow: hidden;
+    margin-bottom: 50px;
 
     .card {
       margin: 10px 10px;
@@ -152,6 +153,7 @@ export default {
     }
 
     .bottom-btns {
+      z-index: 99999;
       position: fixed;
       bottom: 50px;
       height: 50px;
