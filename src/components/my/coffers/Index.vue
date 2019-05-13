@@ -33,6 +33,10 @@
 <script>
 export default {
   name: 'Index',
+  created () {
+    this.$store.dispatch('setTabsState', false)
+    this.$store.dispatch('setTitle', '我的金库')
+  },
   data () {
     return {
       total: '1254.00',

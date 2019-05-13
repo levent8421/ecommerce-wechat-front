@@ -14,32 +14,12 @@
 </template>
 
 <script>
-import {Header} from 'element-ui'
-import TabBar from '@/model/tabBar'
 
 export default {
   name: 'Header',
-  mounted () {
-    const route = this.$route
-    const menu = TabBar.menus.filter(m => m.name === route.name)
-    if (menu && menu.length >= 1) {
-      this.$store.dispatch('setTitle', menu[0].text)
-    }
-  },
-  components: {
-    ElHeader: Header
-  },
   methods: {
     handleBack () {
       this.$router.back()
-    }
-  },
-  watch: {
-    $route (to) {
-      const menu = TabBar.menus.filter(m => m.name === to.name)
-      if (menu && menu.length >= 1) {
-        this.$store.dispatch('setTitle', menu[0].text)
-      }
     }
   }
 }

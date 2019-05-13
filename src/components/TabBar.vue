@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-wrapper">
+  <div class="tab-bar-wrapper" v-if="$store.state.showTabs">
     <div class="stub"></div>
     <div class="tab-bar">
       <button :key="menu.text" v-for="menu in menus" @click="handleMenuClick(menu)"

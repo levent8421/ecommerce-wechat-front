@@ -35,6 +35,10 @@
 <script>
 export default {
   name: 'Index',
+  created () {
+    this.$store.dispatch('setTabsState', false)
+    this.$store.dispatch('setTitle', '我的团队')
+  },
   data () {
     return {
       user: {

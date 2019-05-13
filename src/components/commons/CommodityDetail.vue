@@ -49,6 +49,15 @@
     </div>
     <commodity-share-dialog :returnMoney="commodity.returnMoney" :show="showShare" :code="shareCode"
                             @share="handleShare"/>
+    <div class="mask" v-if="maskShow">
+      <div>
+        Pointer
+      </div>
+      <div class="buttons">
+        <el-button class="btn btn-to-poster" @click="toPoster">推广海报</el-button>
+        <el-button class="btn btn-close" @click="closeMask">取消</el-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -58,6 +67,8 @@ import CommodityShareDialog from './CommodityShareDialog'
 export default {
   created () {
     this.id = this.$route.params.id
+    this.$store.dispatch('setTitle', '商品详情')
+    this.$store.dispatch('setTabsState', false)
   },
   components: {
     CommodityShareDialog
@@ -80,18 +91,26 @@ export default {
         returnMoney: 7
       },
       showShare: true,
-      shareCode: '10010'
+      shareCode: '10010',
+      maskShow: false
     }
   },
   name: 'CommodityDetail',
   methods: {
     handleShare (code) {
-      alert('share' + code)
+      console.log(code)
+      this.maskShow = true
     },
     handleBuy () {
       const id = this.$route.params.id
       this.$router.push({name: 'Buy', params: {id}})
       this.$store.dispatch('setTitle', '购买')
+    },
+    toPoster () {
+      this.$router.push({name: 'Poster'})
+    },
+    closeMask () {
+      this.maskShow = false
     }
   }
 }
@@ -196,7 +215,7 @@ export default {
       position: fixed;
       height: 50px;
       width: 100%;
-      bottom: 50px;
+      bottom: 0;
       left: 0;
       border-top: 1px solid #DDDDDD;
       background-color: white;
@@ -241,6 +260,36 @@ export default {
 
       .btn-service {
         color: #666666;
+      }
+    }
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, .2);
+      z-index: 99999999999;
+
+      .buttons {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: #F5F5F9;
+
+        .btn {
+          @border: 1px solid #DDDDDD;
+          width: 100%;
+          height: 40px;
+          display: block;
+          margin: 10px 0;
+          padding: 0;
+          border-top: @border;
+          border-bottom: @border;
+          border-right: none;
+          border-left: none;
+        }
       }
     }
   }

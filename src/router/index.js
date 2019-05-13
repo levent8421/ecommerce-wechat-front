@@ -9,6 +9,7 @@ import Team from '@/components/my/team/Index'
 import TeamShare from '@/components/my/team/Share'
 import Withdrawal from '@/components/my/coffers/Withdrawal'
 import Buy from '@/components/commons/Buy'
+import Poster from '@/components/commons/Poster'
 
 Vue.use(Router)
 
@@ -58,6 +59,10 @@ export default new Router({
       path: '/buy',
       name: 'Buy',
       component: Buy
+    }, {
+      path: '/poster',
+      name: 'Poster',
+      component: Poster
     }
   ]
 })

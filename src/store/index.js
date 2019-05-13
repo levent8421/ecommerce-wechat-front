@@ -7,7 +7,8 @@ const state = {
   menu: {
     list: TabBar.menus
   },
-  title: ''
+  title: '',
+  showTabs: true
 }
 const mutations = {
   setMenuActive (state, name) {
@@ -17,6 +18,9 @@ const mutations = {
   },
   setTitle (state, title) {
     state.title = title
+  },
+  setTabsState (state, s) {
+    state.showTabs = s
   }
 }
 const actions = {
@@ -27,6 +31,9 @@ const actions = {
   },
   setTitle ({commit}, title) {
     commit('setTitle', title)
+  },
+  setTabsState ({commit}, state) {
+    commit('setTabsState', state)
   }
 }
 const getters = {}

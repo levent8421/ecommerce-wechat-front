@@ -16,6 +16,10 @@ export default {
     PositionBar,
     CommodityCard
   },
+  created () {
+    this.$store.dispatch('setTabsState', true)
+    this.$store.dispatch('setTitle', '附近')
+  },
   data () {
     return {
       commodities: [

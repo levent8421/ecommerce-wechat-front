@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-content">
     <router-view/>
   </div>
 </template>
@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+  .main-content {
+    margin-bottom: 50px;
+  }
 </style>

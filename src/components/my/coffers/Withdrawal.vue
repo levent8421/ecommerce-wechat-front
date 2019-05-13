@@ -32,6 +32,10 @@
 import iconUrl from '@/assets/icon_money_bag.png'
 
 export default {
+  created () {
+    this.$store.dispatch('setTabsState', false)
+    this.$store.dispatch('setTitle', '提现申请')
+  },
   data () {
     return {
       iconUrl,

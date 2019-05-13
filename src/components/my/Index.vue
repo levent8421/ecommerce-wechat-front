@@ -29,6 +29,10 @@ import MyOrder from './MyOrder'
 
 export default {
   name: 'Index',
+  created () {
+    this.$store.dispatch('setTabsState', true)
+    this.$store.dispatch('setTitle', '我的')
+  },
   data () {
     return {
       showTeam: true,

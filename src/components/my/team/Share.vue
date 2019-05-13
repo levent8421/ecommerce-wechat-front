@@ -13,6 +13,10 @@ import qrcode from '@/assets/qrcode.png'
 
 export default {
   name: 'Share',
+  created () {
+    this.$store.dispatch('setTabsState', false)
+    this.$store.dispatch('setTitle', '组建团队')
+  },
   data () {
     return {
       image: qrcode
@@ -30,7 +34,8 @@ export default {
       text-align: center;
       color: #666666;
     }
-    img{
+
+    img {
       width: 80%;
       margin: 50px auto;
       display: block;
